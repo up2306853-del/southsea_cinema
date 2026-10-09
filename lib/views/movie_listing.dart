@@ -21,8 +21,13 @@ class MovieListing extends StatelessWidget {
           Row(
             spacing: 10.0,
             children: [
-              Text("Released in 2002")
+              Text("Released in 2002",
+              style: const TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.bold 
+              ),)
             ],
+              
           )
         ], 
       ) ),
