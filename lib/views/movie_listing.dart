@@ -17,8 +17,14 @@ class MovieListing extends StatelessWidget {
       drawer: const NavDrawer(),
       body: Container(child: Column(
         children: [
-          Text("Spider-Man")
-        ],
+          Text("Spider-Man"),
+          Row(
+            spacing: 10.0,
+            children: [
+              Text("Released in 2002")
+            ],
+          )
+        ], 
       ) ),
     );
   }
