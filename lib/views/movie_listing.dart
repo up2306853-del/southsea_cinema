@@ -20,14 +20,18 @@ class MovieListing extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Spider-Man",
+                "Spider-Man (2002)",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight(800)),
                 
               ),
               Text(
-                "Released in 2002",
+                "Southsea Cinema Room",
                 style: TextStyle(fontSize: 15.0),
                 ),
+              Text(
+                "Tuesday 13/10/2026, 14:00 - 16:01",
+                style: TextStyle(fontSize: 15.0),
+                ),  
               Text(
                 "Stars Tobey Maguire as Peter Parker, a normal high school student",
                 style: TextStyle(fontSize: 15.0),
