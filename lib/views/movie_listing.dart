@@ -22,7 +22,7 @@ class MovieListing extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Spider-Man (2002)",
+                "Spider-Man (2002) (12A)",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight(800)),
                 
               ),
@@ -54,11 +54,21 @@ class MovieListing extends StatelessWidget {
                 "Can Spider-Man save the city from this criminal?",
                 style: TextStyle(fontSize: 15.0),
               ),
+              Text(
+                "Please note that Discounts / Membership Benifits will be applied once you have selected your tickets",
+                style: TextStyle(fontSize: 15.0),
+              ),
+              Text(
+                "Select Tickets (Up to 10 in total)",
+                style: TextStyle(fontSize: 15.0),
+              ),
+              
               DropdownMenu(
                 initialSelection: 10,
                 onSelected: (int? value) {
                   print(value);
                 },
+                
                 dropdownMenuEntries: [
                   DropdownMenuEntry(value: 10, label: '10 Tickets'),
                   DropdownMenuEntry(value: 9, label: '9 Tickets'),
@@ -71,7 +81,9 @@ class MovieListing extends StatelessWidget {
                   DropdownMenuEntry(value: 2, label: '2 Tickets'),
                   DropdownMenuEntry(value: 1, label: '1 Ticket'),
               ]
-              )
+              ),
+
+              
 
               
               
