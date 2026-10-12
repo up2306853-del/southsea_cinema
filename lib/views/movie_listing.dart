@@ -54,23 +54,22 @@ class MovieListing extends StatelessWidget {
               ),
               DropdownMenu(
                 initialSelection: 10,
-                onSelected: (int? value),
-                
-                
-                
-                
-              dropdownMenuEntries: [
-              DropdownMenuEntry(value: 10, label: '10 Tickets'),
-              DropdownMenuEntry(value: 9, label: '9 Tickets'),
-              DropdownMenuEntry(value: 8, label: '8 Tickets'),
-              DropdownMenuEntry(value: 7, label: '7 Tickets'),
-              DropdownMenuEntry(value: 6, label: '6 Tickets'),
-              DropdownMenuEntry(value: 5, label: '5 Tickets'),
-              DropdownMenuEntry(value: 4, label: '4 Tickets'),
-              DropdownMenuEntry(value: 3, label: '3 Tickets'),
-              DropdownMenuEntry(value: 2, label: '2 Tickets'),
-              DropdownMenuEntry(value: 1, label: '1 Tickets'),
+                onSelected: (int? value) {
+                  print(value);
+                },
+                dropdownMenuEntries: [
+                  DropdownMenuEntry(value: 10, label: '10 Tickets'),
+                  DropdownMenuEntry(value: 9, label: '9 Tickets'),
+                  DropdownMenuEntry(value: 8, label: '8 Tickets'),
+                  DropdownMenuEntry(value: 7, label: '7 Tickets'),
+                  DropdownMenuEntry(value: 6, label: '6 Tickets'),
+                  DropdownMenuEntry(value: 5, label: '5 Tickets'),
+                  DropdownMenuEntry(value: 4, label: '4 Tickets'),
+                  DropdownMenuEntry(value: 3, label: '3 Tickets'),
+                  DropdownMenuEntry(value: 2, label: '2 Tickets'),
+                  DropdownMenuEntry(value: 1, label: '1 Tickets'),
               ]
+              )
 
               
               
@@ -81,3 +80,4 @@ class MovieListing extends StatelessWidget {
     );
   }
 }
+// () {}
