@@ -22,7 +22,7 @@ class MovieListing extends StatelessWidget {
             children: [
               Text(
                 "Spider-Man (2002) (12A)",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight(800)),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight(1000)),
                 
               ),
               Text(
