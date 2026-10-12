@@ -3,7 +3,6 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 
-
 class MovieListing extends StatelessWidget {
   const MovieListing({super.key});
 
@@ -55,8 +54,10 @@ class MovieListing extends StatelessWidget {
                 style: TextStyle(fontSize: 15.0),
               ),
               Text(
+                
                 "Please note that Discounts / Membership Benifits will be applied once you have selected your tickets",
                 style: TextStyle(fontSize: 15.0),
+                
               ),
               Text(
                 "Select Tickets (Up to 10 in total)",
@@ -79,15 +80,13 @@ class MovieListing extends StatelessWidget {
                   DropdownMenuEntry(value: 4, label: '4 Tickets'),
                   DropdownMenuEntry(value: 3, label: '3 Tickets'),
                   DropdownMenuEntry(value: 2, label: '2 Tickets'),
-                  DropdownMenuEntry(value: 1, label: '1 Ticket'),
+                  DropdownMenuEntry(value: 1, label: '1 Ticket')
               ]
               ),
 
-              
+             
 
-              
-              
-              
+        
               
             ],
           )),
