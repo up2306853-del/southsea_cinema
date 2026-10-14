@@ -3,6 +3,7 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 
+
 class MovieListing extends StatelessWidget {
   const MovieListing({super.key});
 
@@ -42,6 +43,7 @@ class MovieListing extends StatelessWidget {
                 style: TextStyle(fontSize: 15.0),
               ),
               
+              
               DropdownMenu(
                 initialSelection: 10,
                 onSelected: (int? value) {
@@ -62,7 +64,15 @@ class MovieListing extends StatelessWidget {
               ]
               ),
 
-             
+              ElevatedButton(
+                onPressed: () {
+                  print('Add to order');
+                },
+                child: const Text('Add to order'),
+              )
+                
+
+
 
         
               
