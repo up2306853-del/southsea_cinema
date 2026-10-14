@@ -4,10 +4,17 @@ import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 
 
-class MovieListing extends StatelessWidget {
+class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
 
   @override
+  State<MovieListing> createState() => _MovieListingState();
+}
+
+class _MovieListingState extends State<MovieListing> {
+  @override
+  int _ticketQuantity = 0;
+  String _bookingMessage = '';
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -45,9 +52,14 @@ class MovieListing extends StatelessWidget {
               
               
               DropdownMenu(
-                initialSelection: 10,
+                initialSelection: _ticketQuantity,
                 onSelected: (int? value) {
-                  print(value);
+                  if (value != null) {
+                    setState(() {
+                      _ticketQuantity = value;
+                      print('Tickets selected: $_ticketQuantity');
+                    });
+                  }
                 },
                 
                 dropdownMenuEntries: [
@@ -60,14 +72,16 @@ class MovieListing extends StatelessWidget {
                   DropdownMenuEntry(value: 4, label: '4 Tickets'),
                   DropdownMenuEntry(value: 3, label: '3 Tickets'),
                   DropdownMenuEntry(value: 2, label: '2 Tickets'),
-                  DropdownMenuEntry(value: 1, label: '1 Ticket'),
-                  DropdownMenuEntry(value: 0, label: '0 Ticket')
+                  DropdownMenuEntry(value: 1, label: '1 Ticket')
+                  
               ]
               ),
 
               ElevatedButton(
                 onPressed: () {
-                  print('Add to order');
+                  setState(() {
+                    print('Added $_ticketQuantity ticekt to order');
+                  });
                 },
                 child: const Text('Add to order'),
               )
