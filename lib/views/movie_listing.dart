@@ -33,31 +33,9 @@ class MovieListing extends StatelessWidget {
                 "Tuesday 13/10/2026, 14:00 - 16:01",
                 style: TextStyle(fontSize: 15.0),
                 ),  
-              Text(
-                "Stars Tobey Maguire as Peter Parker, a normal high school student",
-                style: TextStyle(fontSize: 15.0),
-                ),
-              Text(
-                "who is bullied and ignored by other students except for Harry Osborn played by James Franco",
-                style: TextStyle(fontSize: 15.0),
-                ),
-              Text(
-                "And Mary Jane played by Kirsten Dunce, his life is all normal until a spider bite gives him super powers",
-                style: TextStyle(fontSize: 15.0),
-                ),
-              Text(
-                "All of the sudden there is a flying criminal named Green Goblin played by Willam Dafoe terrorizing New York City",
-                style: TextStyle(fontSize: 15.0),
-                ),
-              Text(
-                "Can Spider-Man save the city from this criminal?",
-                style: TextStyle(fontSize: 15.0),
-              ),
-              Text(
-                
+              Text(                
                 "Please note that Discounts / Membership Benifits will be applied once you have selected your tickets",
-                style: TextStyle(fontSize: 15.0),
-                
+                style: TextStyle(fontSize: 15.0),                
               ),
               Text(
                 "Select Tickets (Up to 10 in total)",
