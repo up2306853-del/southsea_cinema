@@ -12,9 +12,9 @@ class MovieListing extends StatefulWidget {
 }
 
 class _MovieListingState extends State<MovieListing> {
-  @override
   int _ticketQuantity = 0;
-  String _bookingMessage = '';
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
