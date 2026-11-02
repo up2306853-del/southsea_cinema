@@ -7,13 +7,43 @@ class MovieCard extends StatelessWidget {
   const MovieCard({super.key, required this.movie});
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return  Card(
       margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [],
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  movie.imagePath,
+                  width: 80,
+                  height: 80,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(width: 16,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      movie.title,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold
+                      ),                
+                    ),
+                    SizedBox(height: 8,),
+                    Text(
+                      movie.synopsis,
+                      style: TextStyle(color: Colors.black54),
+                    )
+                  ],
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
