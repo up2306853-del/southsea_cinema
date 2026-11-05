@@ -12,6 +12,7 @@ void main() {
         synopsis: 'When the world is threatened by an ancient evil, the Ninja Turtles must reunite and overcome their faults in order to stand against it.', 
         price: 7.50, 
         imagePath: 'assets/images/tmnt_2007_poster.jpeg',
+        formattedPrice: 
       );
 
       expect(movie.id, 'tmnt');
