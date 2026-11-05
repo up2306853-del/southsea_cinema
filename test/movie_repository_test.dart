@@ -40,5 +40,12 @@ void main() {
       expect(movies?.price, 7.50);
     });
 
+    test('getMoviesById returns null when id does not exist', () {
+      final MovieRepository repository = MovieRepository();
+      final Movie? movies = repository.getMoviesById('non-existent');
+
+      expect(movies, isNull);
+    });
+
   });
 }
