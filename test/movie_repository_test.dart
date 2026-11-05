@@ -12,5 +12,22 @@ void main() {
 
     });
 
+    test('getMovies contains valid spiderman and batman films', () {
+      final MovieRepository repository = MovieRepository();
+      final List<Movie> movies = repository.getMovies();
+
+      final Movie spiderman = movies[0];
+      expect(spiderman.id, 'spiderman');
+      expect(spiderman.title, 'Spider-Man (2002)');
+      expect(spiderman.price, 7.50);
+      expect(spiderman.imagePath, isNotNull);
+
+      final Movie batman = movies[1];
+      expect(batman.id, 'batman');
+      expect(batman.title, 'The Batman');
+      expect(batman.price, 7.50);
+      expect(batman.imagePath, isNotNull);
+    });
+
   });
 }
