@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/repositories/movie_repository.dart';
 
 void main() {
   group('Movie model tests', () {
@@ -36,5 +37,15 @@ void main() {
       );
 
       expect(movie.formattedPrice, '£7.50');
+
+    test('getMovieById returns null when id does not exist', () {
+      final MovieRepository repository = MovieRepository();
+      final Movie? movie = repository.getMoviesById('batman');
+
+      expect(movie, isNotNull);
+      expect(movie?.title, 'The Batman');
+      expect(movie?.price, 7.50);
+
+    });
   });
   }
