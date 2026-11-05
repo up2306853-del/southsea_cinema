@@ -10,7 +10,7 @@ class MovieRepository {
         runtime: '2 hours', 
         synopsis: 'A shy teenager is bitten by a genetically modified spider and uses his new spider-like abilities to fight injustice as a masked superhero.', 
         price: 7.50, 
-        imagePath: 'assets/images/spiderman_2002_poster.png'
+        imagePath: 'assets/images/spiderman_2002_poster.jpeg'
         ),
       Movie(
         id: 'batman', 
@@ -19,7 +19,7 @@ class MovieRepository {
         runtime: '2 hours 30 mins', 
         synopsis: 'When a sadistic serial killer begins murdering key political figures in Gotham, the Batman is forced to investigate the hidden corruption in the city and question his involvement.', 
         price: 7.50, 
-        imagePath: 'assets/images/the_batman_poster.png'
+        imagePath: 'assets/images/the_batman_poster.jpeg'
         ),
     ];
   }
