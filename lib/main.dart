@@ -2,23 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
-import 'package:southsea_cinema/screens/menu_screen.dart';
+
 
 void main() {
   runApp(const SouthseaCinemaApp());
-  runApp(const App());
-}
-
-class App extends StatelessWidget {
-  const App({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Movie Menu',
-      home: MenuScreen(),
-    );
-  }
 }
 
 
