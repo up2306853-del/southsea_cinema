@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
@@ -27,6 +29,15 @@ void main() {
       expect(batman.title, 'The Batman');
       expect(batman.price, 7.50);
       expect(batman.imagePath, isNotNull);
+    });
+
+    test('getMoviesById returns matching movie when id exists', () {
+      final MovieRepository repository = MovieRepository();
+      final Movie? movies = repository.getMoviesById('tmnt');
+
+      expect(movies, isNotNull);
+      expect(movies?.title, 'TMNT (2007)');
+      expect(movies?.price, 7.50);
     });
 
   });
