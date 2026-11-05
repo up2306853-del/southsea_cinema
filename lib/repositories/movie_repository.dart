@@ -30,6 +30,16 @@ class MovieRepository {
         price: 7.50, 
         imagePath: 'assets/images/tmnt_2007_poster.jpeg'
         ),
+
     ];
+  }
+  
+  Movie? getMoviesById(String id) {
+    for (final movie in getMovies()) {
+      if (movie.id == id) {
+        return movie;
+      }
+    }
+    return null;
   }
 }
