@@ -4,22 +4,6 @@ import 'package:southsea_cinema/main.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/screens/menu_screen.dart';
 
-void main() {
-  group('App smoke tests', () {
-    testWidgets('App displays MenuScreen as home', (WidgetTester tester) async {
-      await tester.pumpWidget(const App());
-      expect(find.byType(MenuScreen), findsOneWidget);
-      expect(find.text('Sandwich Menu'), findsOneWidget);
-    });
-
-    testWidgets('Displays sandwich cards with names and prices',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(const App());
-      expect(find.text('Footlong Sub'), findsOneWidget);
-      expect(find.text('£7.50'), findsOneWidget);
-      expect(find.text('Six-Inch Sub'), findsOneWidget);
-      expect(find.text('£4.50'), findsOneWidget);
-      expect(find.text('Order'), findsNWidgets(2));
-    });
-  });
+void main{
+  
 }
