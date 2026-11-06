@@ -9,7 +9,6 @@ void main() {
       final List<Movie> movies = repository.getMovies();
 
       expect(movies.length, 3);
-
     });
 
     test('getMovies contains valid spiderman and batman films', () {
@@ -44,6 +43,5 @@ void main() {
 
       expect(movies, isNull);
     });
-
   });
 }

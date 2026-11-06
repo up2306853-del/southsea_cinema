@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
-
-
 class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
 
@@ -31,52 +29,45 @@ class _MovieListingState extends State<MovieListing> {
               Text(
                 "Spider-Man (2002) (12A)",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight(1000)),
-                
               ),
               Text(
                 "Southsea Cinema Room",
                 style: TextStyle(fontSize: 15.0),
-                ),
+              ),
               Text(
                 "Tuesday 13/10/2026, 14:00 - 16:01",
                 style: TextStyle(fontSize: 15.0),
-                ),  
-              Text(                
+              ),
+              Text(
                 "Please note that Discounts / Membership Benifits will be applied once you have selected your tickets",
-                style: TextStyle(fontSize: 15.0),                
+                style: TextStyle(fontSize: 15.0),
               ),
               Text(
                 "Select Tickets (Up to 10 in total)",
                 style: TextStyle(fontSize: 15.0),
               ),
-              
-              
               DropdownMenu(
-                initialSelection: _ticketQuantity,
-                onSelected: (int? value) {
-                  if (value != null) {
-                    setState(() {
-                      _ticketQuantity = value;
-                      print('Tickets selected: $_ticketQuantity');
-                    });
-                  }
-                },
-                
-                dropdownMenuEntries: [
-                  DropdownMenuEntry(value: 10, label: '10 Tickets'),
-                  DropdownMenuEntry(value: 9, label: '9 Tickets'),
-                  DropdownMenuEntry(value: 8, label: '8 Tickets'),
-                  DropdownMenuEntry(value: 7, label: '7 Tickets'),
-                  DropdownMenuEntry(value: 6, label: '6 Tickets'),
-                  DropdownMenuEntry(value: 5, label: '5 Tickets'),
-                  DropdownMenuEntry(value: 4, label: '4 Tickets'),
-                  DropdownMenuEntry(value: 3, label: '3 Tickets'),
-                  DropdownMenuEntry(value: 2, label: '2 Tickets'),
-                  DropdownMenuEntry(value: 1, label: '1 Ticket')
-                  
-              ]
-              ),
-
+                  initialSelection: _ticketQuantity,
+                  onSelected: (int? value) {
+                    if (value != null) {
+                      setState(() {
+                        _ticketQuantity = value;
+                        print('Tickets selected: $_ticketQuantity');
+                      });
+                    }
+                  },
+                  dropdownMenuEntries: [
+                    DropdownMenuEntry(value: 10, label: '10 Tickets'),
+                    DropdownMenuEntry(value: 9, label: '9 Tickets'),
+                    DropdownMenuEntry(value: 8, label: '8 Tickets'),
+                    DropdownMenuEntry(value: 7, label: '7 Tickets'),
+                    DropdownMenuEntry(value: 6, label: '6 Tickets'),
+                    DropdownMenuEntry(value: 5, label: '5 Tickets'),
+                    DropdownMenuEntry(value: 4, label: '4 Tickets'),
+                    DropdownMenuEntry(value: 3, label: '3 Tickets'),
+                    DropdownMenuEntry(value: 2, label: '2 Tickets'),
+                    DropdownMenuEntry(value: 1, label: '1 Ticket')
+                  ]),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -85,12 +76,6 @@ class _MovieListingState extends State<MovieListing> {
                 },
                 child: const Text('Add to order'),
               )
-                
-
-
-
-        
-              
             ],
           )),
     );
