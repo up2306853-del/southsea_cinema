@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
@@ -14,6 +15,7 @@ class MenuScreen extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: const Text('Southsea Cinema'),
+        foregroundColor: cinemaFontWhite,
       ),
       body: ListView.builder(
         itemCount: movies.length,

@@ -35,7 +35,7 @@ class MovieCard extends StatelessWidget{
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: cinemaSurface,
+                          color: cinemaBrand,
                         ),
                       ),
                       const SizedBox(height: 8),
