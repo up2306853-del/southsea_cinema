@@ -16,10 +16,9 @@ void main() {
         (WidgetTester tester) async {
       await tester.pumpWidget(const App());
       expect(find.text('The Batman'), findsOneWidget);
-      expect(find.text('£7.50'), findsOneWidget);
       expect(find.text('TMNT (2007)'), findsOneWidget);
-      expect(find.text('£7.50'), findsOneWidget);
-      expect(find.text('Book Now'), findsNWidgets(2));
+      expect(find.text('£7.50'), findsNWidgets(3));
+      expect(find.text('Book Now'), findsNWidgets(3));
     });
   });
 }
