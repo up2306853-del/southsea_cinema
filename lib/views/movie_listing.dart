@@ -31,6 +31,14 @@ class _MovieListingState extends State<MovieListing> {
     }
   }
 
+  void _decreaseQuantity() {
+    if (_ticketQuantity > 0){
+      setState(() {
+        _ticketQuantity --;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
