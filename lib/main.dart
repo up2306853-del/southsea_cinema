@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
@@ -42,5 +44,18 @@ class SouthseaCinemaApp extends StatelessWidget {
         // '/listing': (context) => const MovieListing(),
       },
     );
+  }
+}
+
+
+class OrderItemDisplay extends StatelessWidget {
+  final String itemType;
+  final Int quantity;
+
+  OrderItemDisplay(this.quantity, this.itemType, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('This is a placeholder for OrderItemDisplay');
   }
 }
