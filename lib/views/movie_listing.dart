@@ -53,23 +53,43 @@ class _MovieListingState extends State<MovieListing> {
       body: Container(
           padding: EdgeInsets.all(16.0),
           child: Column(
-            children: [ <Widget> [
+            children: <Widget> [
               OrderItemDisplay(
                 _ticketQuantity, 
                 widget.movie.title,
                 ),
-              ]
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    print('Added $_ticketQuantity ticekt to order');
-                  });
-                },
-                child: const Text('Add to order'),
-              )
-            ],
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _increaseQuantity, 
+                      child: const Text('Book'),
+                    ),
+                    const SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: _decreaseQuantity, 
+                      child: const Text('Remove'),
+                    )
+                  ],
+                )
+              ],
+             
           )),
     );
   }
 }
 // () {}
+
+
+class OrderItemDisplay extends StatelessWidget {
+  final String movie;
+  final int ticket;
+
+  const OrderItemDisplay(this.ticket, this.movie, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('$ticket $movie ticket(s): $ticket');
+  }
+}

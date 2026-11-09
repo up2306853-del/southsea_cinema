@@ -45,16 +45,6 @@ class SouthseaCinemaApp extends StatelessWidget {
   }
 }
 
-class OrderItemDisplay extends StatelessWidget {
-  final String itemType;
-  final int quantity;
 
-  const OrderItemDisplay(this.quantity, this.itemType, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('$quantity $itemType ticket(s): $quantity');
-  }
-}
 
 
