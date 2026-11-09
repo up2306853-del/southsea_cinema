@@ -72,7 +72,7 @@ class MovieCard extends StatelessWidget {
                       ),
                     );
                   }, //fix it
-                  child: const Text('Book Now'),
+                  child: const Text('Book'),
                 ),
               ],
             )
