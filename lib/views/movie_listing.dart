@@ -56,6 +56,11 @@ class _MovieListingState extends State<MovieListing> {
               OrderItemDisplay(
                 _ticketQuantity, 
                 widget.movie.title,
+                widget.movie.age,
+                widget.movie.price,
+                widget.movie.runtime,
+                widget.movie.synopsis,
+                widget.movie.imagePath
                 ),
                 const SizedBox(height: 16),
                 Row(
@@ -83,9 +88,14 @@ class _MovieListingState extends State<MovieListing> {
 
 class OrderItemDisplay extends StatelessWidget {
   final String movie;
+  final String age;
+  final String runtime;
+  final String synopsis;
+  final String imagePath;
+  final double price;
   final int ticket;
 
-  const OrderItemDisplay(this.ticket, this.movie, {super.key});
+  const OrderItemDisplay(this.ticket, this.movie, this.age, this.price, this.runtime, this.synopsis,this.imagePath,{super.key});
 
   @override
   Widget build(BuildContext context) {
