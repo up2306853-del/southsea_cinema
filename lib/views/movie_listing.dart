@@ -59,6 +59,15 @@ class _MovieListingState extends State<MovieListing> {
                 ),
                 const SizedBox(height: 16),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                    widget.movie.imagePath,
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.cover,
+                    ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
@@ -74,8 +83,8 @@ class _MovieListingState extends State<MovieListing> {
                 )
               ],
              
-          )),
-    );
+          )]),
+    ));
   }
 }
 // () {}
