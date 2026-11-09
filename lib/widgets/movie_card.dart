@@ -64,6 +64,10 @@ class MovieCard extends StatelessWidget {
                   onPressed: () {}, //fix it
                   child: const Text('Book Now'),
                 ),
+                ElevatedButton(
+                  onPressed: () {}, //fix it
+                  child: const Text('Unbook'),
+                ),
               ],
             )
           ],

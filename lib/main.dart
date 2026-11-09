@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
@@ -49,9 +47,9 @@ class SouthseaCinemaApp extends StatelessWidget {
 
 class OrderItemDisplay extends StatelessWidget {
   final String itemType;
-  final Int quantity;
+  final int quantity;
 
-  OrderItemDisplay(this.quantity, this.itemType, {super.key});
+  const OrderItemDisplay(this.quantity, this.itemType, {super.key});
 
   @override
   Widget build(BuildContext context) {
