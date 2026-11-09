@@ -89,6 +89,6 @@ class OrderItemDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('$ticket $movie ticket(s): $ticket');
+    return Text('$movie $ticket ticket(s): $ticket');
   }
 }
