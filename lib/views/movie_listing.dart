@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+  final int maxQuantity;
 
-  @override
-  State<MovieListing> createState() => _MovieListingState();
+ const MovieListing({
+  super.key,
+  required this.movie,
+  this.maxQuantity = 10,
+ });
+
+ @override
+ State<MovieListing> createState() {
+  return _MovieListingState();
+ }
 }
 
 class _MovieListingState extends State<MovieListing> {
   int _ticketQuantity = 0;
+
+
+  
 
   @override
   Widget build(BuildContext context) {
