@@ -23,7 +23,13 @@ class _MovieListingState extends State<MovieListing> {
   int _ticketQuantity = 0;
 
 
-  
+  void _increaseQuantity() {
+    if (_ticketQuantity < widget.maxQuantity) {
+      setState(() {
+        _ticketQuantity ++;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
