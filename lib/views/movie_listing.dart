@@ -66,9 +66,30 @@ class _MovieListingState extends State<MovieListing> {
                     width: 80,
                     height: 80,
                     fit: BoxFit.cover,
-                    ),
+                  ),
+                  const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.movie.title,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: cinemaBrand,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        widget.movie.synopsis,
+                        style: const TextStyle(color: cinemaFontWhite),
+                      )
+                    ],
+                  ),
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ElevatedButton(
                       onPressed: _increaseQuantity, 
