@@ -95,11 +95,6 @@ class _MovieListingState extends State<MovieListing> {
                       onPressed: _increaseQuantity, 
                       child: const Text('Book'),
                     ),
-                    const SizedBox(width: 8),
-                    ElevatedButton(
-                      onPressed: _decreaseQuantity, 
-                      child: const Text('Remove'),
-                    )
                   ],
                 )
               ],
