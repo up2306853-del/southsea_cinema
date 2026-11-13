@@ -20,7 +20,7 @@ class MovieListing extends StatefulWidget {
 }
 
 class _MovieListingState extends State<MovieListing> {
-  int _ticketQuantity = 0;
+  int _ticketQuantity = 1;
 
 
   void _increaseQuantity() {
