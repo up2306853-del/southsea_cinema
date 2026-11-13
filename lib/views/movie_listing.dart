@@ -46,9 +46,6 @@ class _MovieListingState extends State<MovieListing> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.movie.title,style: cinemaHeaderStyle),
-        backgroundColor: cinemaSurface,
-        iconTheme: const IconThemeData(color: cinemaBrand),
-        elevation: 0,
       ),
       drawer: const NavDrawer(),
       body: Container(
@@ -76,16 +73,10 @@ class _MovieListingState extends State<MovieListing> {
                     children: [
                       Text(
                         widget.movie.title,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: cinemaBrand,
-                        ),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         widget.movie.synopsis,
-                        style: const TextStyle(color: cinemaFontWhite),
                       ),
                       DropdownMenu<int>(
                         initialSelection: _ticketQuantity,
