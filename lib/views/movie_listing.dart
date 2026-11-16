@@ -109,7 +109,7 @@ class _MovieListingState extends State<MovieListing> {
                   children: [
                     ElevatedButton(
                       onPressed: _increaseQuantity, 
-                      child: const Text('Book'),
+                      child: const Text('Add to order'),
                     ),
                   ],
                 )
