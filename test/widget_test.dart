@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/main.dart';
 import 'package:southsea_cinema/models/movie.dart';
-import 'package:southsea_cinema/views/menu_screen.dart';
+import 'package:southsea_cinema/views/home_view.dart';
 
 void main() {
   group('App smoke tests', () {
     testWidgets('App displays MenuScreen as home', (WidgetTester tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(MenuScreen), findsOneWidget);
+      expect(find.byType(HomeView), findsOneWidget);
       expect(find.text('Southsea Cinema'), findsOneWidget);
     });
 
