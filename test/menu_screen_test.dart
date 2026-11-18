@@ -23,7 +23,10 @@ void main() {
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
             return const HomeView();
-          },            
+          },  
+          '/basket':(BuildContext context) {
+            return const BasketScreen();            
+          }          
         },
       ),
     );
