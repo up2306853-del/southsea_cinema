@@ -14,5 +14,24 @@ void main() {
     expect(find.byIcon(Icons.shopping_basket), findsOneWidget);
   });
 
+  testWidgets('Tapping the basket button navigaets to BasketScreen', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        initialRoute: '/',
+        routes: <String, WidgetBuilder>{
+          '/': (BuildContext context) {
+            return const HomeView();
+          },            
+        },
+      ),
+    );
 
+    await tester.tap(find.byIcon(Icons.shopping_basket));
+    await tester.pumpAndSettle();
+    
+    expect(find.byType(BasketScreen), findsOneWidget);
+  
+  });
 }
