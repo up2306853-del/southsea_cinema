@@ -19,6 +19,19 @@ class BasketScreen extends StatefulWidget{
 class _BasketScreenState extends State<BasketScreen> {
   String _confirmationMessage = '';
 
+  Widget _buildEmptyState() {
+
+    return const Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 32.0),
+        child: Text(
+          'Your basket is empty',
+          style: TextStyle(fontSize: 16, color: Colors.grey),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final CartRepositopry cart = CartRepositopry.instance;
