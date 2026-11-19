@@ -19,5 +19,19 @@ void main() {
   setUp(() {
     CartRepositopry.instance.clear();
   });
+
+  testWidgets('OrderScreen shows quantity buttons and add to basket', (
+    WidgetTester tester,
+  )async {
+    await tester.pumpWidget(
+      const MaterialApp(home: MovieListing(movie: testMovie)),
+    );
+
+    expect(find.text('Order Test Spider-Man (2002)'), findsOneWidget);
+    expect(find.text('0 Test movie(s)'), findsOneWidget);
+    expect(find.text('Add to order'), findsOneWidget);
+    expect(find.text('Remove order'), findsOneWidget);
+    expect(find.text('Add to Basket'), findsOneWidget);
+  });
 }
 
