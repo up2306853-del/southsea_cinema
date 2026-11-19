@@ -27,5 +27,15 @@ void main() {
   setUp(() {
     CartRepositopry.instance.clear();
   });
+
+  group('CartRepository tests', () {
+    final CartRepositopry cart = CartRepositopry.instance;
+    expect(cart.getItems().length, 0);
+    expect(cart.getTotalItems(), 0);
+    expect(cart.totalItemCount, 0);
+    expect(cart.getSubtotal(), 0.0);
+    expect(cart.getDeliveryFee(), 0.0);
+    expect(cart.getTotalDue(), 0.0);
+  });
 }
 
