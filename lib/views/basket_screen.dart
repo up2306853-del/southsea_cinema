@@ -115,6 +115,20 @@ class _BasketScreenState extends State<BasketScreen> {
       ),
     );
     children.add(const SizedBox(height: 24));
+    children.add(
+      SizedBox(
+        width: double.infinity,
+        child: PrimaryButton(
+          label: 'Checkout',
+          onPressed: () {
+            setState(() {
+              cart.clear();
+              _confirmationMessage = 'Thanks, your order is on its way';
+            });
+          },
+        ),
+      ),
+    );
   }
 
   @override
