@@ -84,7 +84,7 @@ class _MovieListingState extends State<MovieListing> {
                           if (value != null) {
                             setState(() {
                               _ticketQuantity = value;
-                              print('Tickets: $_ticketQuantity');
+                              // print('Tickets: $_ticketQuantity');
                             });
                           }
                         },
@@ -110,6 +110,10 @@ class _MovieListingState extends State<MovieListing> {
                     ElevatedButton(
                       onPressed: _increaseQuantity, 
                       child: const Text('Add to order'),
+                    ),
+                    ElevatedButton(
+                      onPressed: _decreaseQuantity, 
+                      child: const Text('Remove order'),
                     ),
                   ],
                 )
