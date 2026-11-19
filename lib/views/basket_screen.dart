@@ -32,6 +32,37 @@ class _BasketScreenState extends State<BasketScreen> {
     );
   }
 
+  Widget _buildLineItem(CartRepositopry cart, CartItem item, int index) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${item.quantity} * ${item.movie.title}',
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 4),
+                Text('£${item.lineTotal.toStringAsFixed(2)}'),
+              ],
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.delete_outline, color: Colors.red,),
+            onPressed:() {
+              setState(() {
+                cart.removeItem(index);
+              });
+            },
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final CartRepositopry cart = CartRepositopry.instance;
