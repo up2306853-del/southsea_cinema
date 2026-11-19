@@ -15,14 +15,23 @@ const Movie testMovie1 = Movie(
 
 const Movie testMovie2 = Movie(
   id: 'batman', 
-        title: 'The Batman', 
-        age: '15', 
-        runtime: '2 hours 30 mins', 
-        synopsis: 'When a sadistic serial killer begins murdering key political figures in Gotham, the Batman is forced to investigate the hidden corruption in the city and question his involvement.', 
-        price: 7.50, 
-        imagePath: 'assets/images/the_batman_poster.jpeg'
+  title: 'The Batman', 
+  age: '15', 
+  runtime: '2 hours 30 mins', 
+  synopsis: 'When a sadistic serial killer begins murdering key political figures in Gotham, the Batman is forced to investigate the hidden corruption in the city and question his involvement.', 
+  price: 7.50, 
+  imagePath: 'assets/images/the_batman_poster.jpeg'
 );
 
+const Movie testMovie3 = Movie(
+  id: 'tmnt', 
+  title: 'TMNT (2007)', 
+  age: 'PG', 
+  runtime: '1 hours 27 mins', 
+  synopsis: 'When the world is threatened by an ancient evil, the Ninja Turtles must reunite and overcome their faults in order to stand against it.',
+  price: 7.50, 
+  imagePath: 'assets/images/tmnt_2007_poster.jpeg'
+);
 void main() {
   setUp(() {
     CartRepositopry.instance.clear();
@@ -37,5 +46,7 @@ void main() {
     expect(cart.getDeliveryFee(), 0.0);
     expect(cart.getTotalDue(), 0.0);
   });
+
+
 }
 
