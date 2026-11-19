@@ -19,4 +19,16 @@ class CartRepositopry {
       _items.removeAt(index);
     }
   }
+
+  int getTotalItems() {
+    int total = 0;
+    for (final CartItem item in _items) {
+      total += item.quantity;
+    }
+    return total;
+  }
+
+  int get totalItemCount {
+    return getTotalItems();
+  }
 }
