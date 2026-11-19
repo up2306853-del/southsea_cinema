@@ -63,9 +63,9 @@ class _BasketScreenState extends State<BasketScreen> {
     );
   }
 
-  Widget _builTotalRow(String label, String value, {bool emphasize = false}) {
+  Widget _buildTotalRow(String label, String value, {bool emphasise  = false}) {
     final TextStyle style;
-    if (emphasize) {
+    if (emphasise) {
       style = const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
     } else {
       style = const TextStyle(color: cinemaFontWhite);
@@ -81,6 +81,40 @@ class _BasketScreenState extends State<BasketScreen> {
         ],
       ),
     );
+  }
+
+  Widget _buildBasketList(CartRepositopry cart, List<CartItem> items) {
+    final List<Widget> children = [];
+
+    children.add(const Text('Your basket', style: cinemaHeaderStyle));
+    children.add((const SizedBox(height: 16)));
+
+    for (int index = 0; index < items.length; index++) {
+      final CartItem item = items[index];
+      children.add(_buildLineItem(cart, item, index));
+    }
+
+    children.add(const SizedBox(height: 24));
+    children.add(
+      _buildTotalRow(
+        'Items subtotal', 
+        '£${cart.getSubtotal().toStringAsFixed(2)}',
+      )
+    );
+    children.add(
+      _buildTotalRow(
+        'Delivery',
+        '£${cart.getDeliveryFee().toStringAsFixed(2)}',
+      ),
+    );
+    children.add(
+      _buildTotalRow(
+        'Total to pay',
+        '£${cart.getTotalDue().toStringAsFixed(2)}',
+        emphasise: true,
+      ),
+    );
+    children.add(const SizedBox(height: 24));
   }
 
   @override
