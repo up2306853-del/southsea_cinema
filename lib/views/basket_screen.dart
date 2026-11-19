@@ -63,6 +63,26 @@ class _BasketScreenState extends State<BasketScreen> {
     );
   }
 
+  Widget _builTotalRow(String label, String value, {bool emphasize = false}) {
+    final TextStyle style;
+    if (emphasize) {
+      style = const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+    } else {
+      style = const TextStyle(color: cinemaFontWhite);
+    }
+
+    return Padding(
+      padding: const  EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: style),
+          Text(value, style: style,),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final CartRepositopry cart = CartRepositopry.instance;
