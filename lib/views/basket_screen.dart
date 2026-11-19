@@ -23,6 +23,12 @@ class _BasketScreenState extends State<BasketScreen> {
   Widget build(BuildContext context) {
     final CartRepositopry cart = CartRepositopry.instance;
     final List<CartItem> items = cart.getItems();
+    final Widget content;
+    if (items.isEmpty) {
+      content = const Text('Empty basket placeholder');
+    } else {
+      content = const Text('Basket list placeholder');
+    }
 
     return Scaffold(
       appBar: AppBar(
