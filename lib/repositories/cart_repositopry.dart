@@ -31,4 +31,23 @@ class CartRepositopry {
   int get totalItemCount {
     return getTotalItems();
   }
+
+  double getSubtotal() {
+    double sum = 0.0;
+    for (final CartItem item in _items) {
+      sum += item.lineTotal;
+    }
+    return sum;
+  }
+
+  double getDeliveryFee() {
+    if(_items.isEmpty) {
+      return 0.0;
+    }
+    return 1.50;
+  }
+
+  double getTotalDue() {
+    return getSubtotal() + getDeliveryFee();
+  }
 }
