@@ -25,7 +25,14 @@ class _BasketScreenState extends State<BasketScreen> {
     final List<CartItem> items = cart.getItems();
     final Widget content;
     if (items.isEmpty) {
-      content = const Text('Empty basket placeholder');
+      if(_confirmationMessage.isNotEmpty) {
+        content = Column(
+          children: [
+            const Text('Empty basket placeholder'),
+            Text(_confirmationMessage)
+          ],
+        );
+      }
     } else {
       content = const Text('Basket list placeholder');
     }
