@@ -37,7 +37,7 @@ class _MovieListingState extends State<MovieListing> {
       CartRepositopry.instance.addItem(item);
       setState(() {
         _confirmationMessage = 
-        'Added $_ticketQuantity ${widget.movie.title} to basket';
+        'Added $_ticketQuantity tocket(s) for ${widget.movie.title} to basket';
       });
     } else {
       setState(() {
