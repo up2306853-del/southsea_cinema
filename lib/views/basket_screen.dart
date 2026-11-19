@@ -44,9 +44,9 @@ class _BasketScreenState extends State<BasketScreen> {
         title: const Text(appTitle, style: cinemaHeaderStyle),
         actions: const [BasketButton()],
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
-        child: Text('Basket Placeholder'),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: content
       ),
     );
   }
