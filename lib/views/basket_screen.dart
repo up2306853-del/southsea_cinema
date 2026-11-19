@@ -52,7 +52,7 @@ class _BasketScreenState extends State<BasketScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.delete_outline, color: Colors.red,),
-            onPressed:() {
+            onPressed: () {
               setState(() {
                 cart.removeItem(index);
               });
@@ -129,6 +129,19 @@ class _BasketScreenState extends State<BasketScreen> {
         ),
       ),
     );
+    if (_confirmationMessage.isNotEmpty) {
+      children.add(const SizedBox(height: 12));
+      children.add(
+        Text(
+          _confirmationMessage,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+      );
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    );
   }
 
   @override
@@ -138,22 +151,11 @@ class _BasketScreenState extends State<BasketScreen> {
     final Widget content;
     if (items.isEmpty) {
       if(_confirmationMessage.isNotEmpty) {
-        content = Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildEmptyState(),
-            const SizedBox(height: 12),
-            Text(
-              _confirmationMessage,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            )
-          ],
-        );
       } else {
         content = _buildEmptyState();
       }
     } else {
-      content = const Text('Basket list placeholder');
+      content = _buildBasketList(cart, items);
     }
 
     return Scaffold(
