@@ -33,5 +33,19 @@ void main() {
     expect(find.text('Remove order'), findsOneWidget);
     expect(find.text('Add to Basket'), findsOneWidget);
   });
+
+  testWidgets('Adding to basket without selecting quantity shows warining', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      const MaterialApp(home: MovieListing(movie: testMovie)),
+    );
+
+    await tester.tap(find.text('Add to Basket'));
+    await tester.pump();
+
+    expect(find.text('Please select at least 1 movie'), findsOneWidget);
+    expect(CartRepositopry.instance.getItems(), isEmpty);
+  });
 }
 
