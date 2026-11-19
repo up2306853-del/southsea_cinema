@@ -74,6 +74,20 @@ void main() {
     expect(cart.getTotalDue(), 24);
   });
 
+  test('removes items correctly', () {
+    final CartRepositopry cart = CartRepositopry.instance;
+    const CartItem item = CartItem(
+      movie: testMovie1, 
+      quantity: 1,
+    );
+    cart.addItem(item);
+    expect(cart.getItems().length, 2);
+
+    cart.removeItem(0);
+    expect(cart.getItems().length, 0);
+    expect(cart.getTotalDue(), 0.0);
+  });
+
 
 }
 
