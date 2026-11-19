@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/widgets/basket_button.dart';
 
 class MovieListing extends StatefulWidget {
   final Movie movie;
@@ -45,7 +47,8 @@ class _MovieListingState extends State<MovieListing> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.movie.title,style: cinemaHeaderStyle),
+        title: const Text(appTitle, style: cinemaHeaderStyle,),
+        actions: const [BasketButton()],
       ),
       drawer: const NavDrawer(),
       body: Container(
