@@ -40,13 +40,18 @@ class _BasketScreenState extends State<BasketScreen> {
     if (items.isEmpty) {
       if(_confirmationMessage.isNotEmpty) {
         content = Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Empty basket placeholder'),
-            Text(_confirmationMessage)
+            _buildEmptyState(),
+            const SizedBox(height: 12),
+            Text(
+              _confirmationMessage,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            )
           ],
         );
       } else {
-        content = const Text('Empty basket placeholder');
+        content = _buildEmptyState();
       }
     } else {
       content = const Text('Basket list placeholder');
