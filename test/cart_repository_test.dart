@@ -47,6 +47,33 @@ void main() {
     expect(cart.getTotalDue(), 0.0);
   });
 
+  test('adds items and calculates subtotal and dewlivery feee correctly', () {
+    final CartRepositopry cart = CartRepositopry.instance;
+    const CartItem item1 = CartItem(
+      movie: testMovie1, 
+      quantity: 2,
+    );
+    const CartItem item2 = CartItem(
+      movie: testMovie2, 
+      quantity: 1,
+    );
+    const CartItem item3 = CartItem(
+      movie: testMovie3, 
+      quantity: 3,
+    );
+
+    cart.addItem(item1);
+    cart.addItem(item2);
+    cart.addItem(item3);
+
+    expect(cart.getItems().length, 3);
+    expect(cart.getTotalItems(), 3);
+    expect(cart.totalItemCount, 3);
+    expect(cart.getSubtotal(), 22.5);
+    expect(cart.getDeliveryFee(), 1.50);
+    expect(cart.getTotalDue(), 24);
+  });
+
 
 }
 
