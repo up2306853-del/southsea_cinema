@@ -148,9 +148,21 @@ class _BasketScreenState extends State<BasketScreen> {
   Widget build(BuildContext context) {
     final CartRepositopry cart = CartRepositopry.instance;
     final List<CartItem> items = cart.getItems();
+
     final Widget content;
     if (items.isEmpty) {
       if(_confirmationMessage.isNotEmpty) {
+        content = Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildEmptyState(),
+            const SizedBox(height: 12),
+            Text(
+              _confirmationMessage,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        );
       } else {
         content = _buildEmptyState();
       }
