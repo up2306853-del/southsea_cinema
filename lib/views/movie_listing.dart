@@ -4,6 +4,9 @@ import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/basket_button.dart';
+import 'package:southsea_cinema/models/cart_item.dart';
+import 'package:southsea_cinema/repositories/cart_repositopry.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieListing extends StatefulWidget {
   final Movie movie;
