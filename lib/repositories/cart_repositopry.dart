@@ -50,4 +50,8 @@ class CartRepositopry {
   double getTotalDue() {
     return getSubtotal() + getDeliveryFee();
   }
+
+  void clear() {
+    _items.clear();
+  }
 }
