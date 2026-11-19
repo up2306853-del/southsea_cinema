@@ -72,14 +72,14 @@ class _MovieListingState extends State<MovieListing> {
         title: const Text(appTitle, style: cinemaHeaderStyle,),
         actions: const [BasketButton()],
       ),
-      drawer: const NavDrawer(),
-      body: Container(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget> [
-              OrderItemDisplay(
-                _ticketQuantity, 
-                widget.movie.title,
+      body: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget> [
+                OrderItemDisplay(
+                  _ticketQuantity, 
+                  widget.movie.title,
                 ),
                 const SizedBox(height: 16),
                 Row(
@@ -140,12 +140,25 @@ class _MovieListingState extends State<MovieListing> {
                       onPressed: _decreaseQuantity, 
                       child: const Text('Remove order'),
                     ),
+                    const SizedBox(height: 24),
+                    SizedBox(
+                      width: double.infinity,
+                      child: PrimaryButton(
+                        label: 'Add to Basket', 
+                        onPressed: _addToBasket,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      _confirmationMessage,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 )
               ],
              
           ),
-    ));
+    )));
   }
 }
 // () {}
