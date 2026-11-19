@@ -32,6 +32,8 @@ class _BasketScreenState extends State<BasketScreen> {
             Text(_confirmationMessage)
           ],
         );
+      } else {
+        content = const Text('Empty basket placeholder');
       }
     } else {
       content = const Text('Basket list placeholder');
