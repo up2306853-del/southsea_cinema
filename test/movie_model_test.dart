@@ -61,5 +61,20 @@ void main() {
       expect(movie.imagePath, 'assets/images/spiderman_2002_poster.jpeg');
       expect(movie.toJson(), data);
     });
+
+    test('fromJson accepts a whole number price', () {
+        final Map<String, dynamic> data = <String, dynamic>{
+        'id': 'spiderman', 
+        'title': 'Spider-Man (2002)', 
+        'age': '12A', 
+        'runtime': '2 hours', 
+        'synopsis': 'A shy teenager is bitten by a genetically modified spider and uses his new spider-like abilities to fight injustice as a masked superhero.', 
+        'price': 7.50, 
+        'imagePath': 'assets/images/spiderman_2002_poster.jpeg'
+      };
+      final Movie movie = Movie.fromJson(data);
+      expect(movie.price, 7.50);
+      expect(movie.price, isA<double>());
+    });
   });
 }
