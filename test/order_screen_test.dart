@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/models/cart_item.dart';
@@ -57,9 +55,9 @@ void main() {
       const MaterialApp(home: MovieListing(movie: testMovie)),
     );
 
-    await tester.tap(find.text('Add to Order'));
+    await tester.tap(find.text('Add to order'));
     await tester.pump();
-    await tester.tap(find.text('Add to Order'));
+    await tester.tap(find.text('Add to order'));
     await tester.pump();
 
     await tester.tap(find.text('Add to Basket'));
@@ -72,7 +70,7 @@ void main() {
     expect(added.quantity, 2);
     expect(added.movie.id, 'test spiderman');
     expect(added.movie.title, 'Test Spider-Man (2002)');
-    expect(find.text('Added 2 Test ticekt(s) to basket'), findsOneWidget);
+    expect(find.text('Added 2 Test ticket(s) to basket'), findsOneWidget);
   });
 }
 
