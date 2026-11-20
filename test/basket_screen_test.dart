@@ -39,7 +39,7 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: BasketScreen()));
 
     expect(find.text('Your basket'), findsOneWidget);
-    expect(find.text(' 2 * Spider-Man (2002)'), findsOneWidget);
+    expect(find.text('2 * Spider-Man (2002)'), findsOneWidget);
     expect(find.text('£15.00'), findsWidgets);
     expect(find.text('Checkout'), findsOneWidget);
 
