@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/views/basket_screen.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   testWidgets('Menuscreen shows the movie list and a basket button', (
