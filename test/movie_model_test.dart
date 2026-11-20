@@ -50,6 +50,16 @@ void main() {
         'price': 7.50, 
         'imagePath': 'assets/images/spiderman_2002_poster.jpeg'
       };
+
+      final Movie movie = Movie.fromJson(data);
+      expect(movie.id, 'spiderman');
+      expect(movie.title, 'Spider-Man (2002)');
+      expect(movie.age, '12A');
+      expect(movie.runtime, '2 hours');
+      expect(movie.synopsis, 'A shy teenager is bitten by a genetically modified spider and uses his new spider-like abilities to fight injustice as a masked superhero.');
+      expect(movie.price, 7.50);
+      expect(movie.imagePath, 'assets/images/spiderman_2002_poster.jpeg');
+      expect(movie.toJson(), data);
     });
   });
 }
