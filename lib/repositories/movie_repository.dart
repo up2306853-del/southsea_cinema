@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class MovieRepository {
-  List<Movie> _cachedMovies;
+  List<Movie>? _cachedMovies;
 
   List<Movie> getMovies() {
     return const [
@@ -50,6 +50,18 @@ class MovieRepository {
   Future<List<Movie>> loadMoviesFromAssets({
     String assetPath = 'assets/images/data/movie.json'
   }) async {
-    
+    final String jsonString = await rootBundle.loadString(assetPath);
+    final dynamic decodedData = jsonDecode(jsonString);
+    final List<dynamic> jsonList = decodedData as List<dynamic>;
+    final List<Movie> loadedMovies = [];
+
+    for (final dynamic item in jsonList) {
+      final Map<String, dynamic> itemMap = item as Map<String, dynamic>;
+      final Movie movie = Movie.fromJson(itemMap);
+      loadedMovies.add(movie);
+    }
+
+    _cachedMovies = loadedMovies;
+    return loadedMovies;
   }
 }
