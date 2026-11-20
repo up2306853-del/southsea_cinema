@@ -40,6 +40,13 @@ void main() {
     await tester.pumpAndSettle();
     
     expect(find.byType(BasketScreen), findsOneWidget);
+
+    await tester.scrollUntilVisible(find.text('The Batman'), 150);
+    expect(find.text('£7.50'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('NonExistent Movie'), 150);
+    expect(find.text('£0.00'), findsOneWidget);
+    expect(find.text('Image unavailable'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   
   });
 }
