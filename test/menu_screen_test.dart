@@ -13,6 +13,10 @@ void main() {
 
     expect(find.byType(MovieCard), findsWidgets);
     expect(find.byIcon(Icons.shopping_basket), findsOneWidget);
+
+    setUp(() {
+      rootBundle.clear();
+    });
   });
 
   testWidgets('Tapping the basket button navigaets to BasketScreen', (
