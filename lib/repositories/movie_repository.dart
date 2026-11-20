@@ -1,4 +1,6 @@
 import 'package:southsea_cinema/models/movie.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 class MovieRepository {
   List<Movie> getMovies() {
