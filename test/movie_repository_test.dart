@@ -48,10 +48,14 @@ void main() {
       final MovieRepository repository = MovieRepository();
       final List<Movie> movies = await repository.loadMoviesFromAssets();
 
-      expect(movies.length, 3);
+      expect(movies.length, 4);
       expect(movies[0], 'spiderman');
       expect(movies[1], 'batman');
       expect(repository.getMovies(), movies);
+      expect(movies[3].id, 'nonexistent');
+      expect(movies[3].price, 0.00);
+      expect(movies[3].imagePath, 'assets/images/nachos.jpeg');
+      expect(movies[3].title, 'NonExistent Movie');
     });
   });
 }
