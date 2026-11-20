@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class MovieRepository {
+  List<Movie> _cachedMovies;
+
   List<Movie> getMovies() {
     return const [
       Movie(
@@ -43,5 +45,11 @@ class MovieRepository {
       }
     }
     return null;
+  }
+
+  Future<List<Movie>> loadMoviesFromAssets({
+    String assetPath = 'assets/images/data/movie.json'
+  }) async {
+    
   }
 }
