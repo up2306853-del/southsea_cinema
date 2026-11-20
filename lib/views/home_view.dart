@@ -6,8 +6,46 @@ import 'package:southsea_cinema/widgets/movie_card.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/basket_button.dart';
 
-class HomeView extends StatelessWidget {
+
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  List<Movie> _movies = [];
+  bool _loading = true;
+  String _errorMessage = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadMovies();
+  }
+
+  Future<void> _loadMovies() async {
+    try {
+      final MovieRepository repository = MovieRepository();
+      final List<Movie> movies = await repository.loadMoviesFromAssets();
+      if (!mounted) {
+        return;
+      }
+      setState(() {
+        _movies = movies;
+        _loading = false;
+      });
+    } catch (error) {
+      if(!mounted) {
+        return;
+      }
+      setState(() {
+        _errorMessage = 'Could not load the menu: $error';
+        _loading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
