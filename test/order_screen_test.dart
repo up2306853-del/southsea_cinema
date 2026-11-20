@@ -22,7 +22,7 @@ void main() {
 
   testWidgets('OrderScreen shows quantity buttons and add to basket', (
     WidgetTester tester,
-  )async {
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(home: MovieListing(movie: testMovie)),
     );
@@ -34,7 +34,7 @@ void main() {
     expect(find.text('Add to Basket'), findsOneWidget);
   });
 
-  testWidgets('Adding to basket without selecting quantity shows warining', (
+  testWidgets('Adding to basket without selecting quantity shows warning', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(
