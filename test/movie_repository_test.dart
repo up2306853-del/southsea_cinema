@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
@@ -10,7 +8,7 @@ void main() {
       final MovieRepository repository = MovieRepository();
       final List<Movie> movies = repository.getMovies();
 
-      expect(movies.length, 3);
+      expect(movies.length, 4);
     });
 
     test('getMovies contains valid spiderman and batman films', () {
