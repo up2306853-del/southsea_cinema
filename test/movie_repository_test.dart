@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
@@ -42,6 +44,16 @@ void main() {
       final Movie? movies = repository.getMoviesById('non-existent');
 
       expect(movies, isNull);
+    });
+
+    test('loadmoviesfromassets reads the bundled JSON menu', () async {
+      final MovieRepository repository = MovieRepository();
+      final List<Movie> movies = await repository.loadMoviesFromAssets();
+
+      expect(movies.length, 3);
+      expect(movies[0], 'spiderman');
+      expect(movies[1], 'batman');
+      expect(repository.getMovies(), movies);
     });
   });
 }
