@@ -24,6 +24,30 @@ void main() {
   }
 }
 
+class UnsupportedPlatformApp extends StatelessWidget {
+  const UnsupportedPlatformApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Padding(
+            padding: EdgeInsets.all(24.0),
+            child: Text(
+              'This app saves orders with SQLite and is set up to run on '
+              'Android only. Stop the app and run it on an Android emulator '
+              'or device instead.',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      )
+    );
+  }
+}
+
 class App extends StatelessWidget {
   const App({super.key});
 
