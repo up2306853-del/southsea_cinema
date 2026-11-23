@@ -17,7 +17,11 @@ bool isSupportedPlatform() {
 }
 
 void main() {
+  if (isSupportedPlatform()) {
   runApp(const SouthseaCinemaApp());
+  } else {
+    runApp(const UnsupportedPlatformApp());
+  }
 }
 
 class App extends StatelessWidget {
