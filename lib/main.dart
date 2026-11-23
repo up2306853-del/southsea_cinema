@@ -4,6 +4,17 @@ import 'package:southsea_cinema/views/home_view.dart';
 // import 'package:southsea_cinema/views/movie_listing.';
 // import 'package:southsea_cinema/views/menu_screen.dart';
 import 'package:southsea_cinema/views/basket_screen.dart';
+import 'package:flutter/foundation.dart';
+
+bool isSupportedPlatform() {
+  if(kIsWeb) {
+    return false;
+  }
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    return true;
+  }
+  return false;
+}
 
 void main() {
   runApp(const SouthseaCinemaApp());
