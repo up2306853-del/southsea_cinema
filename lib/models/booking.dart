@@ -1,17 +1,18 @@
 class Booking {
   final int? id;
-  final String title;
-  final double price;
-  final String synopsis;
-  final String runtime;
-  final String age;
+  final int bookinNumber;
+  final String summary;
+  final double total;
+  final String date;
 
   const Booking({
     this.id,
-    required this.title,
-    required this.synopsis,
-    required this.age,
-    required this.price,
-    required this.runtime,
+    required this.bookinNumber,
+    required this.summary,
+    required this.total,
+    required this.date,
   });
+
+  
+
 }
