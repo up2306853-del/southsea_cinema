@@ -15,8 +15,16 @@ class Booking {
 
   Map<String, Object?> toMap() {
     final Map<String, Object?> data = <String, Object?>{
+      'booking_number': bookingNumber,
+      'summary': summary,
+      'total': total,
+      'date': date
+    };
 
+    if (id != null) {
+      data['id'] = id;
     }
+    return data;
   }
 
 }
