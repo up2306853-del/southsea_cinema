@@ -22,4 +22,15 @@ class CinemaDatabase {
     _database = db;
     return db;
   }
+
+  Future<Database> _initDB(String fileName) async {
+    final String folder = await getDatabasesPath();
+    final String filePath = join(folder, fileName);
+    final Database db = await openDatabase(
+      filePath,
+      version: 1,
+      onCreate: _createDB,
+    );
+    return db;
+  }
 }
