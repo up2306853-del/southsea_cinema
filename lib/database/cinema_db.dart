@@ -8,4 +8,8 @@ class CinemaDatabase {
   static final CinemaDatabase instance = CinemaDatabase._internal();
 
   static Database? _database;
+
+  void setDatabase(Database? db) {
+    _database = db;
+  }
 }
