@@ -35,6 +35,14 @@ class CinemaDatabase {
   }
 
   Future<void> createTables(Database db, int version) async {
-    
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS orders (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        booking_number INTEGER NOT NULL,
+        summary TEXT NOT NULL,
+        total REAL NOT NULL,
+        date TEXT NOT NULL
+      )
+    ''');
   }
 }
