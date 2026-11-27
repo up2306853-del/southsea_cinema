@@ -1,18 +1,22 @@
 class Booking {
   final int? id;
-  final int bookinNumber;
+  final int bookingNumber;
   final String summary;
   final double total;
   final String date;
 
   const Booking({
     this.id,
-    required this.bookinNumber,
+    required this.bookingNumber,
     required this.summary,
     required this.total,
     required this.date,
   });
 
-  
+  Map<String, Object?> toMap() {
+    final Map<String, Object?> data = <String, Object?>{
+
+    }
+  }
 
 }
