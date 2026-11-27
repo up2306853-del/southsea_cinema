@@ -33,4 +33,8 @@ class CinemaDatabase {
     );
     return db;
   }
+
+  Future<void> createTables(Database db, int version) async {
+    
+  }
 }
