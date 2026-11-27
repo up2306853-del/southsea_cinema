@@ -27,4 +27,20 @@ class Booking {
     return data;
   }
 
+  factory Booking.fromMap(Map<String, Object?> map) {
+    final int bookingNumber = map['booking_number'] as int;
+    final String summary = map['summary'] as String;
+    final num totalNumber = map['total'] as num;
+    final double total = totalNumber.toDouble();
+    final String date = map['date'] as String;
+
+    return Booking(
+      id: map['id'] as int?,
+      bookingNumber: bookingNumber,
+      summary: summary,
+      total: total,
+      date: date,
+    );
+  }
+
 }
